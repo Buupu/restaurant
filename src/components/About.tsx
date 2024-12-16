@@ -41,11 +41,11 @@ const timeline: TimelineEvent[] = [
     image: "/history-2012.jpg",
   },
   {
-    year: "2016",
+    year: "2024",
     title: "Second Michelin Star",
     description:
       "Further recognition of our dedication to exceptional cuisine and service.",
-    image: "/history-2016.jpg",
+    image: "/history-2024.jpg",
   },
 ];
 
