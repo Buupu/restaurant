@@ -16,7 +16,8 @@ export function Header() {
         justifyContent: "space-between",
         alignItems: "center",
         zIndex: 50,
-        backgroundColor: "transparent",
+        backgroundColor: "white",
+        boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
       })}
     >
       {/* Hamburger Menu */}
@@ -26,11 +27,11 @@ export function Header() {
           border: "none",
           cursor: "pointer",
           padding: "0.5rem",
-          color: "white",
+          color: "black",
           display: "flex",
           alignItems: "center",
           _hover: {
-            opacity: 0.8,
+            opacity: 0.7,
           },
         })}
       >
@@ -42,7 +43,7 @@ export function Header() {
         className={css({
           fontFamily: "Georgia, serif",
           fontSize: "1.5rem",
-          color: "white",
+          color: "black",
           fontStyle: "italic",
         })}
       >
@@ -52,20 +53,20 @@ export function Header() {
       {/* Reservations Button */}
       <Button
         className={css({
-          backgroundColor: "transparent",
+          backgroundColor: "black",
           color: "white",
           padding: "0.5rem 1rem",
           fontSize: "0.875rem",
           letterSpacing: "0.1em",
-          border: "1px solid white",
+          border: "none",
           borderRadius: "full",
           cursor: "pointer",
           transition: "all 0.2s ease",
           _hover: {
-            backgroundColor: "rgba(255, 255, 255, 0.1)",
+            backgroundColor: "#333",
           },
           _pressed: {
-            backgroundColor: "rgba(255, 255, 255, 0.2)",
+            backgroundColor: "#444",
           },
         })}
       >

@@ -5,6 +5,13 @@ import { Button } from "react-aria-components";
 import Image from "next/image";
 
 export function Hero() {
+  const scrollToMenu = () => {
+    const menuSection = document.getElementById("menu-section");
+    if (menuSection) {
+      menuSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       className={css({
@@ -54,9 +61,9 @@ export function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
               className={css({
-                fontFamily: "Georgia, serif",
-                fontSize: "2rem",
-                fontStyle: "italic",
+                fontFamily: "Corinthia",
+                fontSize: "4rem",
+                fontWeight: "700",
               })}
             >
               Leon Korhonen
@@ -109,6 +116,10 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
+            className={css({
+              display: "flex",
+              gap: "1rem",
+            })}
           >
             <Button
               className={css({
@@ -133,6 +144,30 @@ export function Hero() {
             >
               BOOK NOW
             </Button>
+            <Button
+              onPress={scrollToMenu}
+              className={css({
+                backgroundColor: "transparent",
+                color: "white",
+                padding: "1rem 2rem",
+                fontSize: "1rem",
+                letterSpacing: "0.1em",
+                border: "1px solid white",
+                borderRadius: "full",
+                cursor: "pointer",
+                transition: "all 0.2s ease",
+                _hover: {
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  transform: "translateY(-2px)",
+                },
+                _pressed: {
+                  backgroundColor: "rgba(255, 255, 255, 0.2)",
+                  transform: "translateY(0)",
+                },
+              })}
+            >
+              VIEW MENU
+            </Button>
           </motion.div>
         </motion.div>
 
@@ -144,15 +179,16 @@ export function Hero() {
           className={css({
             display: "grid",
             gridTemplateColumns: "repeat(2, 1fr)",
+            gridTemplateRows: "repeat(2, 1fr)",
             gap: "2rem",
             position: "relative",
           })}
         >
           <div
             className={css({
-              gridColumn: "2",
-              gridRow: "1",
-              aspectRatio: "1",
+              gridColumn: "1",
+              gridRow: "1 / span 2",
+              aspectRatio: "1/2",
               overflow: "hidden",
               borderRadius: "md",
               position: "relative",
@@ -169,7 +205,7 @@ export function Hero() {
           </div>
           <div
             className={css({
-              gridColumn: "1",
+              gridColumn: "2",
               gridRow: "2",
               aspectRatio: "1",
               overflow: "hidden",
